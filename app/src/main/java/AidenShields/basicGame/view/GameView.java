@@ -1,4 +1,4 @@
-package AidenShields.basicGame;
+package AidenShields.basicGame.view;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
@@ -9,9 +9,14 @@ import android.view.SurfaceView;
 
 import androidx.annotation.NonNull;
 
+import AidenShields.basicGame.R;
+import AidenShields.basicGame.MainThread;
+import AidenShields.basicGame.model.Entities.StaticEntity;
+import AidenShields.basicGame.model.Entities.StaticEntityImpl;
+
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     MainThread thread;
-    private StaticEntity redSquare = new StaticEntity(BitmapFactory.decodeResource(getResources(), R.drawable.infinty), 100,100);
+    private StaticEntity redSquare = new StaticEntityImpl(BitmapFactory.decodeResource(getResources(), R.drawable.infinty), 375, 219, 100,100);
 
 
     public GameView(Context context){
@@ -46,7 +51,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
     public void update(){
-        redSquare.update();
     }
     @Override
     public void draw(Canvas canvas) {
@@ -54,7 +58,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         if (canvas != null) {
             canvas.drawColor(Color.WHITE);
-            redSquare.draw(canvas);
         }
     }
 }

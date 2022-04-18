@@ -3,6 +3,8 @@ package AidenShields.basicGame;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 
+import AidenShields.basicGame.view.GameView;
+
 public class MainThread extends Thread{
     private SurfaceHolder surfaceHolder;
     private GameView gameView;
